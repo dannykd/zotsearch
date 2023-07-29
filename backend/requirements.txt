@@ -1,0 +1,7 @@
+openai
+boto3
+requests
+python-dotenv
+openai"[embeddings]"
+pyarrow
+pinecone
