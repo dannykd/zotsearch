@@ -2,6 +2,7 @@ openai
 boto3
 requests
 python-dotenv
-openai"[embeddings]"
+"openai[embeddings]"
 pyarrow
+"fastapi[all]"
 pinecone

@@ -77,5 +77,5 @@ def dfToJson(df):
   with open("createCourseListWithEmbeddings.json", "w") as outfile:
     json.dump(jsondf, outfile)
 
-searchPinecone("Marginalized communities", 5)
+searchPinecone("Front end development or database management or networking stuff", 30)
 #dfToJson(df)
