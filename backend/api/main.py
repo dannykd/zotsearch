@@ -7,9 +7,8 @@ from mangum import Mangum
 app = FastAPI() #uvicorn main:app --reload
 
 origins = [
-    "https://zotsearch.com",
-    "http://zotsearch.com",
-    "http://localhost:3001",
+    "https://www.zotsearch.com",
+    "http://www.zotsearch.com",
 ]
 
 app.add_middleware(
