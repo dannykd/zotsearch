@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import { Toaster } from "react-hot-toast";
 interface LayoutProps {
-  children: JSX.Element;
+  children: JSX.Element[];
 }
 
 const Layout: FC<LayoutProps> = ({ children }) => {
