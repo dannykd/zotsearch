@@ -1,3 +1,26 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    background: rgb(52,50,82);
+    background: linear-gradient(90deg, rgba(52,50,82,1) 63%, rgba(52,52,93,1) 89%);
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 4px;
+}
+  
+/* Track */
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+  
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

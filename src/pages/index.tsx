@@ -1,23 +1,92 @@
 import type { NextPage } from "next";
 import Head from "next/head";
 import Image from "next/image";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
+import { useState } from "react";
+import { toast } from "react-hot-toast";
+import { error } from "console";
+import Card  from "../components/Card"
+import Pagination from "../components/Pagination";
+import Loader from "../components/Loader";
 
+
+interface Course {
+  id: string,
+  desc: string,
+  title: string
+}
 const Home: NextPage = () => {
+
+  const [text, setText] = useState<string>('')
+  const [loading, setLoading] = useState<boolean>(false)
+  const [courses, setCourses] = useState<Course[]>([])
+  const [currentPage, setCurrentPage] = useState<number>(1)
+  const [postsPerPage, setPostsPerPage] = useState<number>(4)
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setText(event.target.value);
+  };
+
+  const handleClick = async () => {
+    // Do something when the button is clicked
+    if (text == "") { toast.error("Must have atleast one word", {duration: 2500}); return;}
+    if (loading) { toast.error("Please wait until your request has finished loading", {duration: 2500}); return;}
+    setLoading(true)
+    const request = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ query: text })
+    };
+
+    try {
+      const res = await fetch("http://127.0.0.1:8000/api/search", request)
+      if (!res.ok) {
+        const errorData = await res.json()
+        throw new Error(errorData.detail)
+      }
+      setCourses(await res.json())
+
+    }
+    catch (err : any) {
+      toast.error(err.message, {duration: 2500})
+    }
+    setLoading(false)
+  };
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (event.key === 'Enter') {
+      handleClick();
+    }
+  };
+
+  const lastPostIndex = currentPage * postsPerPage;
+  const firstPostIndex = lastPostIndex - postsPerPage;
+  const currentCourses = courses.slice(firstPostIndex, lastPostIndex)
+  
+
+
   return (
-    <div className="mx-auto max-w-4xl">
-      <h1 className="mt-6 flex justify-center text-2xl">INSERT_APP_NAME</h1>
-      <p className="mt-4">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Nunc sed velit
-        dignissim sodales ut eu sem integer vitae. Tincidunt dui ut ornare
-        lectus sit. Orci dapibus ultrices in iaculis nunc sed augue lacus.
-        Lectus magna fringilla urna porttitor rhoncus. Nibh tellus molestie nunc
-        non blandit massa enim nec. Ut pharetra sit amet aliquam id diam
-        maecenas ultricies mi. Cras ornare arcu dui vivamus arcu felis.
-        Tincidunt vitae semper quis lectus nulla at volutpat. Semper auctor
-        neque vitae tempus quam pellentesque nec nam. Tristique senectus et
-        netus et malesuada fames ac. Massa sed elementum tempus egestas.
-      </p>
+    <div className="mx-auto max-w-xl">
+      <h1 className="mt-8 md:mt-14 flex justify-center text-center text-2xl md:text-3xl font-semibold">Effortless UCI course discovery using natural language 💬</h1>
+      <div className="bg-black rounded-lg p-2 mt-6 ring-1 ring-neutral-600 flex">
+        <input onChange={handleChange} onKeyUp={handleKeyPress} className="bg-inherit sm:text-xl px-2 w-full outline-none" placeholder="Ex. Marginalized communities in the US" maxLength={100}></input>
+        <button onClick={handleClick} className="hover:scale-110 px-1 transition ease-in-out">
+          <MagnifyingGlassIcon className="h-8 w-8 m-1"></MagnifyingGlassIcon>
+        </button>
+      </div>
+
+      <h1 className="text-center mt-10 text-xl font-semibold">Recommended Courses 📚</h1>
+      <div className="bg-black min-h-[545px] mt-2 rounded-lg ring-1 ring-neutral-600 p-3 sm:p-6 py-6 space-y-4 items-center">
+
+        { loading ? <Loader></Loader> :
+          currentCourses.map((course, index) => {
+            return <Card key={course.id} id={course.id} title={course.title} desc={course.desc}/>
+          })
+        }
+       
+      </div>
+      <Pagination totalPosts={courses.length} postsPerPage={postsPerPage} setCurrentPage={setCurrentPage} currentPage={currentPage}/>
+      
     </div>
   );
 };

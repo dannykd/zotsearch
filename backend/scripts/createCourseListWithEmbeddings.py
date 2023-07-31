@@ -12,10 +12,6 @@ import time
 import csv
 import pickle
 
-load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
-#testCourseIDs = ['HISTORY144G', 'WRITING50']
-
 def createCourseList() -> [dict()]:
     try:
         response = requests.get("https://api.peterportal.org/rest/v0/courses/all")
@@ -86,6 +82,8 @@ def createPineconeJsonFile(courseList, fileName="../data/coursesWithEmbeddingsFo
         json.dump(courseList, outfile)
 
 if __name__ == "__main__":
+    load_dotenv()
+    openai.api_key = os.getenv("OPENAI_API_KEY")
     courseList = createCourseListPinecone()
     createPineconeJsonFile(courseList)
   

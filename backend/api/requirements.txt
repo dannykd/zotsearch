@@ -1,0 +1,9 @@
+openai
+dotenv
+pinecone
+pydantic
+pandas
+numpy
+uvicorn
+fastapi
+uvicorn

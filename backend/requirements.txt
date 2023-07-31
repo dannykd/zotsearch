@@ -6,3 +6,5 @@ python-dotenv
 pyarrow
 "fastapi[all]"
 pinecone
+pandas
+numpy

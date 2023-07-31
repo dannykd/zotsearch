@@ -7,7 +7,7 @@ function MyApp({ Component, pageProps }: AppProps) {
   return (
     <div>
       <Head>
-        <title>INSERT_APP_NAME</title>
+        <title>zotsearch</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Layout>
