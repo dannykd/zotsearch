@@ -34,12 +34,13 @@ const Home: NextPage = () => {
     setLoading(true)
     const request = {
       method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
+      headers: { 'Content-Type': 'application/json',
+    },
       body: JSON.stringify({ query: text })
     };
 
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/search", request)
+      const res = await fetch(`${process.env.NEXT_PUBLIC_LAMBDA_API_URL}/api/search`, request)
       if (!res.ok) {
         const errorData = await res.json()
         throw new Error(errorData.detail)

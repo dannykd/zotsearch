@@ -1,10 +1,6 @@
-openai
-boto3
-requests
+uvicorn
+fastapi
+openai[embeddings]
 python-dotenv
-"openai[embeddings]"
-pyarrow
-"fastapi[all]"
-pinecone
-pandas
-numpy
+pinecone-client
+mangum

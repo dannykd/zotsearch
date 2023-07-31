@@ -4,13 +4,10 @@
 
 import requests
 import openai
-import boto3
 import os
 import json
 from dotenv import load_dotenv
 import time
-import csv
-import pickle
 
 def createCourseList() -> [dict()]:
     try:

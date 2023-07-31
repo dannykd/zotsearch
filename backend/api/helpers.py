@@ -1,14 +1,8 @@
-import pandas as pd
-import numpy as np
 import os
 import openai
 from openai.embeddings_utils import get_embedding, cosine_similarity
 from dotenv import load_dotenv
 import pinecone
-
-
-
-
 
 def searchFromPinecone(query, n):
   load_dotenv()

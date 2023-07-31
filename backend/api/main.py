@@ -1,14 +1,14 @@
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from helpers import searchFromPinecone
 from pydantic import BaseModel
-from fastapi.middleware.cors import CORSMiddleware
+from mangum import Mangum
 
 app = FastAPI() #uvicorn main:app --reload
 
 origins = [
-    "http://localhost.tiangolo.com",
-    "https://localhost:3001",
-    "http://localhost",
+    "https://zotsearch.com",
+    "http://zotsearch.com",
     "http://localhost:3001",
 ]
 
@@ -19,6 +19,8 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+handler = Mangum(app)
 
 class Search(BaseModel):
     query: str

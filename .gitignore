@@ -38,3 +38,6 @@ next-env.d.ts
 
 # data
 /backend/data
+
+#lambda stuff
+lib
