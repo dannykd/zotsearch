@@ -6,6 +6,7 @@ specifiers:
   '@types/node': 17.0.35
   '@types/react': 18.0.9
   '@types/react-dom': 18.0.5
+  '@vercel/analytics': ^1.0.1
   autoprefixer: ^10.4.11
   dotenv: ^16.3.1
   framer-motion: ^10.15.0
@@ -23,6 +24,7 @@ specifiers:
 dependencies:
   '@headlessui/react': 1.7.3_ef5jwxihqo6n7gxfmzogljlgcm
   '@heroicons/react': 2.0.12_react@18.1.0
+  '@vercel/analytics': 1.0.1
   dotenv: 16.3.1
   framer-motion: 10.15.0_ef5jwxihqo6n7gxfmzogljlgcm
   next: 13.4.12_ef5jwxihqo6n7gxfmzogljlgcm
@@ -400,6 +402,10 @@ packages:
   /@types/scheduler/0.16.2:
     resolution: {integrity: sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==}
     dev: true
+
+  /@vercel/analytics/1.0.1:
+    resolution: {integrity: sha512-Ux0c9qUfkcPqng3vrR0GTrlQdqNJ2JREn/2ydrVuKwM3RtMfF2mWX31Ijqo1opSjNAq6rK76PwtANw6kl6TAow==}
+    dev: false
 
   /acorn-node/1.8.2:
     resolution: {integrity: sha512-8mt+fslDufLYntIoPAaIMUe/lrbrehIiwmR3t2k9LljIzoigEPF27eLk2hy8zSGzmR/ogr7zbRKINMo1u0yh5A==}
