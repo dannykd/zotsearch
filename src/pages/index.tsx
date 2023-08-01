@@ -78,7 +78,7 @@ const Home: NextPage = () => {
       <h1 className="text-center mt-10 text-xl font-semibold">Recommended Courses 📚</h1>
       <div className="bg-black h-[545px] mt-2 rounded-lg ring-1 ring-neutral-600 p-3 sm:p-6 py-6 space-y-4 items-center">
         {
-          loading == false && courses.length == 0 ? <div className="w-full h-full mx-auto flex justify-center items-center text-neutral-500">Search something to get recommendations!</div> : <></>
+          loading == false && courses.length == 0 ? <div className="w-full h-full mx-auto flex justify-center items-center text-neutral-500 text-center">Search something to get recommendations!</div> : <></>
         }
         { loading ? <Loader></Loader> :
           currentCourses.map((course, index) => {
