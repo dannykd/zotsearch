@@ -7,10 +7,10 @@ interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = () => {
   return (
-    <div className="w-full p-4 pb-3 border-neutral-400">
+    <div className="w-full p-4 pb-3 border-b border-neutral-600">
       <div className="hidden justify-between sm:flex">
         <Link href="/">
-          <h1 className="text-2xl font-semibold ">zotsearch</h1>
+          <h1 className="text-2xl font-semibold">zotsearch</h1>
         </Link>
         <div className="mt-1 space-x-8 text-xl">
           <Link href="/">Search</Link>

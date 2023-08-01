@@ -3,8 +3,7 @@
 @tailwind utilities;
 
 html {
-    background: rgb(4,4,4);
-    background: linear-gradient(90deg, rgba(4,4,4,1) 26%, rgba(7,6,24,1) 70%);
+    background: #12113C
 }
 
 /* width */
