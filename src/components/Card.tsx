@@ -8,10 +8,10 @@ interface CardProps {
 
 const Card: FC<CardProps> = ({title, desc, id}) => {
   return (
-    <div className="max-h-28 overflow-hidden text-base bg-neutral-900 ring-[0.8px] ring-neutral-700 w-full rounded-md px-2 py-1">
+    <div className="max-h-28 overflow-hidden text-base bg-neutral-300 ring ring-[0.5px] ring-neutral-500 text-black w-full rounded-md px-2 py-1">
       <div className="h-28 overflow-y-auto p-2">
         <h1><span className="font-semibold">{id}:</span> <span>{title}</span></h1>
-        <p className="text-neutral-400">{desc}</p>
+        <p className="text-neutral-400 text-neutral-700">{desc}</p>
       </div>
     </div>
   )
