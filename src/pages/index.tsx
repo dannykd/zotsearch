@@ -76,7 +76,7 @@ const Home: NextPage = () => {
       </div>
 
       <h1 className="text-center mt-10 text-xl font-semibold">Recommended Courses 📚</h1>
-      <div className="bg-neutral-200 h-[545px] mt-2 rounded-lg ring-1 ring-neutral-600 p-3 space-y-4 items-center">
+      <div className="bg-neutral-200 h-[523px] mt-2 rounded-lg ring-1 ring-neutral-600 p-3 space-y-4 items-center">
         {
           loading == false && courses.length == 0 ? <div className="w-full h-full mx-auto flex justify-center items-center text-neutral-600 text-center">Search something to get recommendations!</div> : <></>
         }
