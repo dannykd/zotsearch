@@ -11,7 +11,7 @@ const Layout: FC<LayoutProps> = ({ children }) => {
     <div className=" h-screen">
       <Toaster/>
       <div
-        className="mx-auto flex h-screen max-w-5xl
+        className="mx-auto flex h-screen max-w-6xl
         flex-col text-lg text-white"
       >
         <Navbar></Navbar>
