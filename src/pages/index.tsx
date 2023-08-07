@@ -66,20 +66,21 @@ const Home: NextPage = () => {
   const currentCourses = courses.slice(firstPostIndex, lastPostIndex)
   
   return (
-    <div className="mx-auto max-w-xl">
+    <div className="mx-auto max-w-xl mb-12">
       <h1 className="mt-8 md:mt-14 flex justify-center text-center text-2xl md:text-3xl font-semibold">Effortlessly discover UCI courses using natural language 💬</h1>
-      <div className="bg-neutral-200 rounded-lg p-2 mt-6 ring-1 ring-neutral-600 flex">
-        <input onChange={handleChange} onKeyUp={handleKeyPress} className="text-black bg-neutral-200 sm:text-xl px-2 w-full outline-none" placeholder="Ex. Marginalized communities in the US" maxLength={100}></input>
+      <div className="bg-neutral-200 rounded-lg p-2 mt-6 ring-1 ring-neutral-600 flex shadow-md shadow-blue-600 dark:bg-black">
+        <input onChange={handleChange} onKeyUp={handleKeyPress} className="text-black dark:text-white dark:bg-black bg-neutral-200 sm:text-xl px-2 w-full outline-none" placeholder="Ex. Marginalized communities in the US" maxLength={100}></input>
         <button onClick={handleClick} className="hover:scale-110 px-1 transition ease-in-out">
           <MagnifyingGlassIcon className="h-8 w-8 m-1 text-neutral-700"></MagnifyingGlassIcon>
         </button>
       </div>
 
       <h1 className="text-center mt-10 text-xl font-semibold">Recommended Courses 📚</h1>
-      <div className="bg-neutral-200 h-[523px] mt-2 rounded-lg ring-1 ring-neutral-600 p-3 space-y-4 items-center">
+      <div className="bg-neutral-200 dark:bg-black h-[523px] mt-2 rounded-lg ring-1 ring-neutral-600 p-3 space-y-4 items-center">
         {
-          loading == false && courses.length == 0 ? <div className="w-full h-full mx-auto flex justify-center items-center text-neutral-600 text-center">Search something to get recommendations!</div> : <></>
+          loading == false && courses.length == 0 ? <div className="w-full h-full mx-auto flex justify-center items-center text-neutral-600 dark:text-neutral-400 text-center">Search something to get recommendations!</div> : <></>
         }
+        {/* <Card key="432" id="HISTORY40" title="Marxism in the US" desc="Learn about topics including the cold war, communism, the red scare. Learn about the vietnam war and the presidents during the time."/> */}
        
         { loading ? <Loader></Loader> :
           currentCourses.map((course, index) => {

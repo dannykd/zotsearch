@@ -7,7 +7,7 @@ interface NavbarProps {}
 
 const Navbar: FC<NavbarProps> = () => {
   return (
-    <div className="w-full p-4 pb-3 border-b border-neutral-400">
+    <div className="w-full max-w-6xl mx-auto p-4 pb-3 border-b border-neutral-400 dark:border-neutral-700">
       <div className="hidden justify-between sm:flex">
         <Link href="/">
           <h1 className="text-2xl font-semibold">zotsearch</h1>

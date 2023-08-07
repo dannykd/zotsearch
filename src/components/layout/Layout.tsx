@@ -8,14 +8,14 @@ interface LayoutProps {
 
 const Layout: FC<LayoutProps> = ({ children }) => {
   return (
-    <div className=" h-screen">
+    <div className="h-screen">
       <Toaster/>
       <div
-        className="mx-auto flex h-screen max-w-6xl
-        flex-col text-lg text-white"
+        className="mx-auto flex
+        flex-col text-lg w-screen text-black bg-neutral-100 dark:bg-neutral-900 dark:text-white h-screen"
       >
         <Navbar></Navbar>
-        <div className="mt-6 mb-12 px-3 md:px-12">{children}</div>
+        <div className="mt-2 px-3 md:px-12">{children}</div>
         <Footer></Footer>
       </div>
     </div>
