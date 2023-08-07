@@ -10,6 +10,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       <Head>
         <title>zotsearch</title>
         <link rel="icon" href="/favicon.ico" />
+        <meta name="description" content="Discover UCI courses using natural language" />
       </Head>
       <Layout>
         <Component {...pageProps} />

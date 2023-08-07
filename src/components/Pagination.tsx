@@ -21,7 +21,7 @@ const Pagination = ({ totalPosts, postsPerPage, setCurrentPage, currentPage }: P
     <div className="flex justify-center mt-2">
       {
         pages.map((page, index)=> {
-          return <button className={`text-xl p-2 mx-1 rounded-lg text-neutral-600 dark:text-neutral-400 ${page == currentPage ? "font-bold text-white dark:text-black" : ""}`} key={index} onClick={()=>setCurrentPage(page)}>{page}</button>
+          return <button className={`text-xl p-2 mx-1 rounded-lg text-neutral-600 dark:text-neutral-400 ${page == currentPage ? "font-bold text-black dark:text-white" : ""}`} key={index} onClick={()=>setCurrentPage(page)}>{page}</button>
         })
       }
     </div>
