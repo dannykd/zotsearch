@@ -24,7 +24,7 @@ const Navbar: FC<NavbarProps> = () => {
         </Link>
         <Menu as="div" className="relative right-0">
           <Menu.Button as="div" className="focus:outline-none">
-            <Bars3Icon className="h-8 w-8 "></Bars3Icon>
+            <Bars3Icon className="h-7 w-7 "></Bars3Icon>
           </Menu.Button>
           <Transition
             as={Fragment}
