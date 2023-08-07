@@ -30,7 +30,7 @@ const Home: NextPage = () => {
   const handleClick = async () => {
     if (text.trim() == "") { toast.error("Must have atleast one word", {duration: 2500}); return;}
     if (loading) { toast.error("Please wait until your request has finished loading", {duration: 2500}); return;}
-    if (lastQuery.trim() == text.trim()) {return;}
+    if (lastQuery.trim() == text.trim()) {toast.error("Query has not changed", {duration: 2500}); return;}
     setLoading(true)
     const request = {
       method: 'POST',
