@@ -10,7 +10,7 @@ const Navbar: FC<NavbarProps> = () => {
     <div className="w-full max-w-6xl mx-auto p-4 pb-3 border-b border-neutral-400 dark:border-neutral-700">
       <div className="hidden justify-between sm:flex">
         <Link href="/">
-          <h1 className="text-2xl font-semibold">zotsearch</h1>
+          <h1 className="sm:text-2xl text-xl font-semibold">zotsearch</h1>
         </Link>
         <div className="mt-1 space-x-8 text-xl">
           <Link href="/">Search</Link>
@@ -20,7 +20,7 @@ const Navbar: FC<NavbarProps> = () => {
 
       <div className="flex w-full justify-between rounded-lg sm:hidden">
         <Link href="/">
-          <h1 className="text-2xl font-semibold">zotsearch</h1>
+          <h1 className="sm:text-2xl text-xl font-semibold">zotsearch</h1>
         </Link>
         <Menu as="div" className="relative right-0">
           <Menu.Button as="div" className="focus:outline-none">
