@@ -71,7 +71,7 @@ const Home: NextPage = () => {
       <div className="bg-neutral-200 rounded-lg p-2 mt-6 ring-1 ring-neutral-600 flex shadow-md shadow-blue-600 dark:bg-black">
         <input onChange={handleChange} onKeyUp={handleKeyPress} className="text-black dark:text-white dark:bg-black bg-neutral-200 sm:text-xl px-2 w-full outline-none" placeholder="Ex. Marginalized communities in the US" maxLength={100}></input>
         <button onClick={handleClick} className="hover:scale-110 px-1 transition ease-in-out">
-          <MagnifyingGlassIcon className="h-8 w-8 m-1 text-neutral-700"></MagnifyingGlassIcon>
+          <MagnifyingGlassIcon className="h-8 w-8 m-1 text-neutral-700 dark:text-neutral-300"></MagnifyingGlassIcon>
         </button>
       </div>
 
