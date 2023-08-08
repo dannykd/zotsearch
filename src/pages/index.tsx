@@ -67,7 +67,7 @@ const Home: NextPage = () => {
   const currentCourses = courses.slice(firstPostIndex, lastPostIndex)
   
   return (
-    <div className="mx-auto max-w-xl mb-12">
+    <div className="mx-auto max-w-xl pb-12">
       <h1 className="mt-8 md:mt-14 flex justify-center text-center text-2xl md:text-3xl font-semibold">Effortlessly discover UCI courses using natural language 💬</h1>
       <div className="bg-neutral-200 rounded-lg p-2 mt-6 ring-1 ring-neutral-600 flex shadow-md shadow-blue-600 dark:bg-black">
         <input onChange={handleChange} onKeyUp={handleKeyPress} className="text-black dark:text-white dark:bg-black bg-neutral-200 sm:text-xl px-2 w-full outline-none" placeholder="Ex. Marginalized communities in the US" maxLength={100}></input>
